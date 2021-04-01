@@ -1,0 +1,70 @@
+\documentclass[a4paper]{article}
+\usepackage[document]{ragged2e}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\geometry{left=2cm}
+\geometry{right=2cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+\setmainfont{Liberation Serif}
+\setmonofont[Scale=0.8]{Hack}
+\sloppy
+
+\graphicspath{ {./pics/} }
+
+\begin{document}
+  \fontsize{14}{16}\selectfont
+
+  \begin{titlepage}
+    \begin{minipage}{0.2\textwidth}
+      \includegraphics[scale=0.4]{logo}
+    \end{minipage}
+    \begin{minipage}{0.7\textwidth}\centering
+      \fontsize{10}{12}\selectfont
+      \textbf{
+        Федеральное государственное бюджетное образовательное учреждение \\
+        высшего профессионального образования \\
+        «Московский государственный технический университет имени Н.Э. Баумана» \\
+        (МГТУ им. Н.Э. Баумана)
+      }
+    \end{minipage}
+
+    \vspace{5cm}
+    \centering
+    \textbf{
+      Лабораторная работа 3 \\
+      по курсу «Технологии машинного обучения» \\
+    }
+
+    \vspace{5cm}
+    \begin{flushright}
+    Выполнил \\
+    студент группы ИУ5-64 \\
+    XXX
+    \end{flushright}
+    \vspace*{\fill}
+    Москва, 2021
+  \end{titlepage}
+
+  \section*{Цель работы}
+  изучение способов подготовки выборки и подбора гиперпараметров на примере метода ближайших соседей.
+
+  \section*{Задание}
+  \begin{enumerate}
+    \item Выберите набор данных (датасет) для решения задачи классификации или регрессии.
+    \item С использованием метода train\_test\_split разделите выборку на обучающую и тестовую.
+    \item
+      Обучите модель ближайших соседей для произвольно заданного гиперпараметра K.
+      Оцените качество модели с помощью подходящих для задачи метрик.
+    \item
+      Произведите подбор гиперпараметра K с использованием GridSearchCV и/или RandomizedSearchCV
+      и кросс-валидации, оцените качество оптимальной модели.
+      Желательно использование нескольких стратегий кросс-валидации.
+    \item Сравните метрики качества исходной и оптимальной моделей.
+  \end{enumerate}
+
+  \section*{Ход работы}
+  Описано в файле 3.ipynb
+\end{document}
