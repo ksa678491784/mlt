@@ -1,0 +1,10 @@
+*
+!/cur.ipynb
+!/web.py
+!/automl.py
+!/satisfaction.csv
+!/rep.tex
+!/rep.pdf
+!/pics/
+!/pics/*
+!/.gitignore
