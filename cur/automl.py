@@ -41,7 +41,7 @@ data_X_train, data_X_test, data_y_train, data_y_test = train_test_split(
 cls = AutoSklearn2Classifier()
 print("Fitting..")
 cls.fit(data_X_train, data_y_train)
-pred = cls.predict(X_test)
+pred = cls.predict(data_X_test)
 print("AutoML precision_score", precision_score(data_y_test, pred))
 print("AutoML recall_score", recall_score(data_y_test, pred))
 print("AutoML roc_auc_score", roc_auc_score(data_y_test, pred))
