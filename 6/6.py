@@ -114,12 +114,27 @@ for i in metrics_ms:
 st.header('Оценка')
 for name in selMetrics:
   st.subheader(name.__name__)
+
+  array_labels = [ ]
+  array_metric = [ ]
+
   for func in selMethods:
     y_pred = func.predict(data_X_test)
 
-    fig, ax = plt.subplots()
-    ax.plot(data_X_test, data_y_test, 'b.')
-    ax.plot(data_X_test, y_pred, 'r.')
-    st.pyplot(fig)
+    array_labels.append(func.__class__.__name__)
+    array_metric.append(name(y_pred, data_y_test))
 
     st.text("{} - {}".format(func.__class__.__name__, name(y_pred, data_y_test)))
+
+  fig, ax1 = plt.subplots(figsize=(3,3))
+  pos = np.arange(len(array_metric))
+  rects = ax1.barh(
+    pos,
+    array_metric,
+    align="center",
+    height=0.5,
+    tick_label=array_labels,
+  )
+  for a, b in zip(pos, array_metric):
+    plt.text(0, a - 0.1, str(round(b, 3)), color="white")
+  st.pyplot(fig)
