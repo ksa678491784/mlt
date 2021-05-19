@@ -38,7 +38,7 @@ data_X_train, data_X_test, data_y_train, data_y_test = train_test_split(
   random_state=1
 )
 
-cls = AutoSklearn2Classifier()
+cls = AutoSklearn2Classifier(time_left_for_this_task=60)
 print("Fitting..")
 cls.fit(data_X_train, data_y_train)
 pred = cls.predict(data_X_test)
